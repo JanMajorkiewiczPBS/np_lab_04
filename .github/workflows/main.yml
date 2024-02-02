@@ -12,14 +12,14 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest]
-        python-version: [3.9, 3.11]
+        python-version: ["3.9", "3.11"]
 
     steps:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
-        exclude-versions: 3.10  # Wykluczenie wersji 3.10 na systemie ubuntu
+        exclude-versions: "3.10"
 
     - name: Update pip
       run: |
